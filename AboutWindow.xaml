@@ -1,0 +1,93 @@
+<ui:FluentWindow x:Class="KeepAwake.AboutWindow"
+                 xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+                 xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+                 xmlns:ui="http://schemas.lepo.co/wpfui/2022/xaml"
+                 xmlns:svc="clr-namespace:KeepAwake.Services"
+                 Title="About KeepAwake"
+                 Width="700" SizeToContent="Height"
+                 ResizeMode="NoResize"
+                 ShowInTaskbar="False"
+                 WindowStartupLocation="CenterOwner"
+                 ExtendsContentIntoTitleBar="True"
+                 WindowBackdropType="None"
+                 WindowCornerPreference="Round"
+                 Background="{DynamicResource AppBackground}"
+                 FontFamily="{StaticResource FontText}"
+                 TextOptions.TextFormattingMode="Display"
+                 UseLayoutRounding="True">
+
+    <Grid>
+        <Grid.RowDefinitions>
+            <RowDefinition Height="32" />
+            <RowDefinition Height="Auto" />
+        </Grid.RowDefinitions>
+
+        <ui:TitleBar Grid.Row="0" Title="" Height="32"
+                     ShowMinimize="False" ShowMaximize="False" ShowClose="False"
+                     Background="Transparent" />
+
+        <Grid Grid.Row="1" Margin="24,0,24,20">
+            <Grid.RowDefinitions>
+                <RowDefinition Height="Auto" />
+                <RowDefinition Height="Auto" />
+                <RowDefinition Height="Auto" />
+            </Grid.RowDefinitions>
+
+            <StackPanel Grid.Row="0" Orientation="Horizontal" Margin="0,0,0,18">
+                <Border Width="44" Height="44" CornerRadius="10" Background="{DynamicResource Accent}">
+                    <ui:SymbolIcon Symbol="Power24" FontSize="24" Foreground="{DynamicResource OnAccent}" />
+                </Border>
+                <StackPanel Margin="14,0,0,0" VerticalAlignment="Center">
+                    <TextBlock Style="{StaticResource DisplayTitle}" Text="KeepAwake" />
+                    <TextBlock Style="{StaticResource CaptionText}" Margin="0,2,0,0"
+                               Text="{Binding [About.Version], Source={x:Static svc:Loc.Instance}}" />
+                </StackPanel>
+            </StackPanel>
+
+            <ScrollViewer Grid.Row="1" VerticalScrollBarVisibility="Auto" Padding="0,0,4,0">
+                <StackPanel>
+                    <Border Style="{StaticResource Card}">
+                        <StackPanel>
+                            <TextBlock Style="{StaticResource SectionTitle}"
+                                       Text="{Binding [About.BackgroundTitle], Source={x:Static svc:Loc.Instance}}" />
+                            <TextBlock Style="{StaticResource BodyText}" Margin="0,8,0,0"
+                                       Text="{Binding [About.Background1], Source={x:Static svc:Loc.Instance}}" />
+                            <TextBlock Style="{StaticResource CaptionText}" Margin="0,10,0,0"
+                                       Text="{Binding [About.Background2], Source={x:Static svc:Loc.Instance}}" />
+                        </StackPanel>
+                    </Border>
+
+                    <Border Style="{StaticResource Card}" Margin="0,12,0,0">
+                        <StackPanel>
+                            <TextBlock Style="{StaticResource SectionTitle}"
+                                       Text="{Binding [About.TechTitle], Source={x:Static svc:Loc.Instance}}" />
+                            <TextBlock Style="{StaticResource BodyText}" Margin="0,8,0,0"
+                                       Text="{Binding [About.Tech1], Source={x:Static svc:Loc.Instance}}" />
+                            <TextBlock Style="{StaticResource BodyText}" Margin="0,6,0,0"
+                                       Text="{Binding [About.Tech2], Source={x:Static svc:Loc.Instance}}" />
+                            <TextBlock Style="{StaticResource BodyText}" Margin="0,6,0,0"
+                                       Text="{Binding [About.Tech3], Source={x:Static svc:Loc.Instance}}" />
+                            <TextBlock Style="{StaticResource BodyText}" Margin="0,6,0,0"
+                                       Text="{Binding [About.Tech4], Source={x:Static svc:Loc.Instance}}" />
+                        </StackPanel>
+                    </Border>
+
+                    <Border Style="{StaticResource Card}" Margin="0,12,0,0">
+                        <StackPanel>
+                            <TextBlock Style="{StaticResource SectionTitle}"
+                                       Text="{Binding [About.DevTitle], Source={x:Static svc:Loc.Instance}}" />
+                            <TextBlock Style="{StaticResource SectionTitle}" FontSize="15" Margin="0,8,0,0"
+                                       Text="{Binding [About.DevName], Source={x:Static svc:Loc.Instance}}" />
+                            <TextBlock Style="{StaticResource CaptionText}" Margin="0,6,0,0"
+                                       Text="{Binding [About.DevNote], Source={x:Static svc:Loc.Instance}}" />
+                        </StackPanel>
+                    </Border>
+                </StackPanel>
+            </ScrollViewer>
+
+            <Button Grid.Row="2" Style="{StaticResource SecondaryButton}" HorizontalAlignment="Right"
+                    Margin="0,16,0,0" MinWidth="96" Click="OnClose"
+                    Content="{Binding [About.Close], Source={x:Static svc:Loc.Instance}}" />
+        </Grid>
+    </Grid>
+</ui:FluentWindow>

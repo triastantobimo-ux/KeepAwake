@@ -1,0 +1,43 @@
+<Project Sdk="Microsoft.NET.Sdk">
+
+  <PropertyGroup>
+    <OutputType>WinExe</OutputType>
+    <TargetFramework>net9.0-windows</TargetFramework>
+    <UseWPF>true</UseWPF>
+    <Nullable>disable</Nullable>
+    <LangVersion>latest</LangVersion>
+    <AssemblyName>KeepAwake</AssemblyName>
+    <RootNamespace>KeepAwake</RootNamespace>
+    <ApplicationManifest>app.manifest</ApplicationManifest>
+    <ApplicationIcon>Assets\AppIcon.ico</ApplicationIcon>
+    <Version>2.0.0</Version>
+    <AssemblyVersion>2.0.0.0</AssemblyVersion>
+    <FileVersion>2.0.0.0</FileVersion>
+    <Product>KeepAwake</Product>
+    <Company>Bimo Gusha Triastanto</Company>
+    <Authors>Bimo Gusha Triastanto</Authors>
+    <Description>Holds sleep, screen-off and idle lock on Windows.</Description>
+    <EnableDefaultPageItems>false</EnableDefaultPageItems>
+    <SatelliteResourceLanguages>en</SatelliteResourceLanguages>
+  </PropertyGroup>
+
+  <ItemGroup>
+    <PackageReference Include="WPF-UI" Version="4.3.0" />
+    <PackageReference Include="CommunityToolkit.Mvvm" Version="8.4.0" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <Compile Remove="legacy\**\*.cs" />
+    <None Include="legacy\**\*.cs" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <Resource Include="Assets\AppIcon.ico" />
+    <Page Include="Themes\Palette.Light.xaml" />
+    <Page Include="Themes\Palette.Dark.xaml" />
+    <Page Include="Themes\Controls.xaml" />
+    <Page Include="MainWindow.xaml" />
+    <Page Include="AboutWindow.xaml" />
+  </ItemGroup>
+
+</Project>
