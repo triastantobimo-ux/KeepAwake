@@ -1,0 +1,52 @@
+# .NET / WPF build outputs
+[Bb]in/
+[Oo]bj/
+[Ll]og/
+[Ll]ogs/
+publish/
+[Dd]ebug/
+x64/
+x86/
+[Ww][Ii][Nn]32/
+[Aa][Rr][Mm]/
+[Aa][Rr][Mm]64/
+[Bb]ld/
+[Bb]inaries/
+
+# Visual Studio / Rider
+*.user
+*.suo
+*.userosscache
+*.sln.docstates
+.vs/
+.idea/
+*.DotSettings.user
+launchSettings.json
+
+# NuGet
+*.nupkg
+*.snupkg
+**/[Pp]ackages/*
+!**/[Pp]ackages/build/
+project.lock.json
+project.fragment.lock.json
+artifacts/
+
+# User-specific / runtime
+*.rsuser
+keepawake.config.json
+
+# Legacy WinForms reference build (kept locally in legacy/)
+legacy/*.exe
+
+# Icon builder helper (AppIcon.ico is tracked; script is local-only)
+Assets/build-icon.ps1
+
+# OS generated
+.DS_Store
+Thumbs.db
+Desktop.ini
+ehthumbs.db
+
+# Qoder / plugin scratch
+.qoder/
